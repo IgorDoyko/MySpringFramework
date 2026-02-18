@@ -8,13 +8,19 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-<bean id="musicBean"
-      class="springf.ClassicalMusic">
-</bean>
+    <context:property-placeholder location="musicPlayer.properties"/>
+
+    <bean id="musicBean"
+          class="springf.ClassicalMusic">
+    </bean>
 
     <bean id="musicPlayer"
           class="springf.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="music" ref="musicBean"/>
+        <!--        <property name="name" value="someName"/>-->
+        <!--        <property name="volume" value="50"/>-->
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
