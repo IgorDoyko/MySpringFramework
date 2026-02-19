@@ -15,7 +15,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="springf.MusicPlayer">
+          class="springf.MusicPlayer"
+    scope="prototype">
         <property name="music" ref="musicBean"/>
         <!--        <property name="name" value="someName"/>-->
         <!--        <property name="volume" value="50"/>-->
