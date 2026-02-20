@@ -11,17 +11,20 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="springf.ClassicalMusic">
+          class="springf.ClassicalMusic"
+    init-method="init"
+    destroy-method="destroy"
+    factory-method="getClassicalMusic">
     </bean>
 
-    <bean id="musicPlayer"
-          class="springf.MusicPlayer"
-    scope="prototype">
-        <property name="music" ref="musicBean"/>
-        <!--        <property name="name" value="someName"/>-->
-        <!--        <property name="volume" value="50"/>-->
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--          class="springf.MusicPlayer"-->
+<!--    scope="prototype">-->
+<!--        <property name="music" ref="musicBean"/>-->
+<!--        &lt;!&ndash;        <property name="name" value="someName"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <property name="volume" value="50"/>&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>
