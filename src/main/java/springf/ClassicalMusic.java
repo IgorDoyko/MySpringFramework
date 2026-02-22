@@ -1,5 +1,8 @@
 package springf;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ClassicalMusic implements Music{
 
     private ClassicalMusic() {

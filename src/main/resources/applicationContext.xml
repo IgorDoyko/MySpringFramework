@@ -8,23 +8,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:property-placeholder location="musicPlayer.properties"/>
-
-    <bean id="musicBean"
-          class="springf.ClassicalMusic"
-    init-method="init"
-    destroy-method="destroy"
-    factory-method="getClassicalMusic">
-    </bean>
-
-<!--    <bean id="musicPlayer"-->
-<!--          class="springf.MusicPlayer"-->
-<!--    scope="prototype">-->
-<!--        <property name="music" ref="musicBean"/>-->
-<!--        &lt;!&ndash;        <property name="name" value="someName"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <property name="volume" value="50"/>&ndash;&gt;-->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
+   <context:component-scan base-package="springf"/>
 
 </beans>
